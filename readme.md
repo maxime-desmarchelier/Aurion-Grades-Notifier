@@ -5,12 +5,8 @@
     <img src="images/logo.png" alt="Logo" width="205" height="134">
   </p>
 
-<h3 align="center">Validatos</h3>
-
-  <p>
-    Aurion-Web Grades Scraping
-    <br />
-  </p>
+<h3 align="center">Validatos : Aurion-Web Grades Scraping</h3>
+ 
 </div>
 
 
