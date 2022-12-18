@@ -1,9 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div>
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <p align="center">
     <img src="images/logo.png" alt="Logo" width="205" height="134">
-  </a>
+  </p>
 
 <h3 align="center">Validatos</h3>
 
