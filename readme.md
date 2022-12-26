@@ -60,3 +60,13 @@ user's action and DiscordJS to publish an announcement in a Discord channel.
      }
    }
    ```
+5. (Optional) Enter Extra information in `config.js`
+
+   _You may want to change the default refresh rate (in minutes)_
+   ```json
+   {
+     "extra": {
+       "refreshRate": 60
+     }
+   }
+   ```
