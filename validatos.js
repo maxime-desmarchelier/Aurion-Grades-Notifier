@@ -1,5 +1,6 @@
 const aurionHandler = require('./AurionHandler');
 const discordBot = require('./discordBot.js');
+const config = require("./config");
 
 let aurion = new aurionHandler();
 let disc = new discordBot();
@@ -29,10 +30,7 @@ function checkNewGrades() {
             }
             currentSubjects = newSubjects;
         }
-        // Reschedule the function to be called in 1 hour
-        setTimeout(checkNewGrades, 3600000);
+        // Reschedule the function to be called at checkInterval (minutes)
+        setTimeout(checkNewGrades, config.extra.checkInterval * 60 * 1000);
     });
 }
-
-
-
