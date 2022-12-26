@@ -32,8 +32,8 @@ function checkNewGrades() {
             }
             currentSubjects = newSubjects;
         }
-        // Reschedule the function to be called at checkInterval (minutes)
-        setTimeout(checkNewGrades, config.extra.checkInterval * 60 * 1000);
+        // Reschedule the function to be called at refreshRate (minutes)
+        setTimeout(checkNewGrades, config.extra.refreshRate * 60 * 1000);
     });
 }
 
@@ -62,9 +62,9 @@ function checkConfig() {
     if (!config.credentials.password) {
         throw new Error("Missing Aurion password");
     }
-    if (!config.extra || !config.extra.checkInterval) {
-        console.log("Warning : Missing check interval - Using default value : 60 minutes");
-        config['extra'] = {"checkInterval": 60};
+    if (!config.extra.refreshRate) {
+        console.log("Warning : Missing refreshRate - Using default value : 60 minutes");
+        config['extra'] = {"refreshRate": 60};
     }
 }
 
