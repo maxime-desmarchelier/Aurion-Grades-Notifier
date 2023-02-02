@@ -60,10 +60,10 @@ function checkConfig() {
         throw new Error("Missing discord announcement channel id");
     }
     if (!config.credentials.user) {
-        throw new Error("Missing Aurion username");
+        throw new Error("Missing Aurion username : \n AURION_USER=your_username\n AURION_PASSWORD=your_password");
     }
     if (!config.credentials.password) {
-        throw new Error("Missing Aurion password");
+        throw new Error("Missing Aurion password : \n AURION_PASSWORD=your_password");
     }
     if (!config.extra.refreshRate) {
         console.log("Warning : Missing refreshRate - Using default value : 60 minutes");

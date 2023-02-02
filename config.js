@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 let config = {
     "credentials": {
-        "user": "user", "password": "password"
+        "user": process.env.AURION_USER, "password": process.env.AURION_PASSWORD
     },
     "discord": {
         "token": "DISCORD_TOKEN",
