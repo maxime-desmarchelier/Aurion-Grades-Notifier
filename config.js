@@ -10,7 +10,8 @@ let config = {
         "announcementChannelId": "DISCORD_BOT_ANNOUNCEMENT_CHANNEL_ID"
     },
     "extra": {
-        "refreshRate": 60
+        "refreshRate": 60,
+        "healthCheckUuid": "HEALTHCHECK_IO_UUID"
     }
 };
 
