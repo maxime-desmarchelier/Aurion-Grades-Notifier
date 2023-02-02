@@ -1,10 +1,8 @@
 const aurionHandler = require('./AurionHandler');
 const discordBot = require('./discordBot.js');
 const config = require("./config");
-const hcService = require('./HealthcheckService');
+const HealthcheckService = require('./HealthcheckService');
 
-
-let hcClient = new hcService(config.extra.healthCheckUuid);
 let aurion = new aurionHandler();
 let disc = new discordBot();
 
@@ -36,11 +34,11 @@ function checkNewGrades() {
             currentSubjects = newSubjects;
         }
         setTimeout(checkNewGrades, config.extra.refreshRate * 60 * 1000);
-        hcClient.reportSucess();
+        HealthcheckService.reportSuccess(config.extra.healthCheckUuid);
     }).catch((err) => {
         console.log(err);
         setTimeout(checkNewGrades, config.extra.refreshRate * 60 * 1000);
-        hcClient.reportFail();
+        HealthcheckService.reportFail(config.extra.healthCheckUuid);
     });
 }
 

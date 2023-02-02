@@ -1,29 +1,30 @@
 const {HealthChecksPingClient, HealthChecksApiClient} = require('healthchecks-io-client');
 
 class HealthcheckService {
-    validUuid = true;
-
-    constructor(uuid) {
-        this.uuid = uuid;
-
+    static reportSuccess(uuid) {
         try {
-            this.client = new HealthChecksPingClient({uuid: uuid});
+            const client = new HealthChecksPingClient({uuid: uuid});
+            client.success();
         } catch (e) {
-            console.error("Warning when init healthcheck service: " + e);
-            this.validUuid = false;
+            console.error("Warning when reporting success: " + e);
         }
     }
 
-    reportSucess() {
-        if (this.validUuid) this.client.success();
+    static reportFail(uuid) {
+        try {
+            const client = new HealthChecksPingClient({uuid: uuid});
+            client.fail();
+        } catch (e) {
+            console.error("Warning when reporting fail: " + e);
+        }
     }
 
-    reportFail() {
-        if (this.validUuid) this.client.fail();
-    }
-
-    updateTimeout(timeout) {
-        if (this.validUuid) HealthChecksApiClient.updateCheck(this.uuid, {timeout: timeout});
+    static updateTimeout(uuid, timeout) {
+        try {
+            HealthChecksApiClient.updateCheck(uuid, {timeout: timeout});
+        } catch (e) {
+            console.error("Warning when updating timeout: " + e);
+        }
     }
 }
 
