@@ -27,7 +27,7 @@ class DiscordBot {
     }
 
     sendNewSubjectMessage(subjects) {
-        this.client.channels.fetch(config.discord.logChannelId).then((channel) => {
+        this.client.channels.fetch(config.discord.announcementChannelId).then((channel) => {
             if (channel == null) {
                 throw new Error("Invalid channel id");
             } else {
