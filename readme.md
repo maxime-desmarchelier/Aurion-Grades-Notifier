@@ -2,11 +2,11 @@
 <br />
 <div>
   <p align="center">
-    <img src="images/logo.png" alt="Logo" width="205" height="134">
+    <img src="images/logo.png" alt="Logo" width="134" height="134">
   </p>
 
 <h3 align="center">Validatos : Aurion-Web Grades Scraping</h3>
- 
+
 </div>
 
 
@@ -46,10 +46,15 @@ user's action and DiscordJS to publish an announcement in a Discord channel.
     }
    }
    ```
+   or use environment variables
+   ```sh
+   AURION_USER=AurionWebUser AURION_PASSWORD=AurionWebPassword
+   ```
 4. Enter Discord information in `config.js`
 
-   _You will have to setup a Discord bot and get its token. Tutorial [here](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)._
-  
+   _You will have to set up a Discord bot and get its token.
+   Tutorial [here](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)._
+
    _You can find the channel ID by enabling developer mode in Discord and right-clicking on the channel you want to use_
    ```json
    {
@@ -67,6 +72,15 @@ user's action and DiscordJS to publish an announcement in a Discord channel.
    {
      "extra": {
        "refreshRate": 60
+     }
+   }
+   ```
+   _You may want to use healthchecks.io API_
+   ```json
+   {
+     "extra": {
+       "healthCheckUuid": "UUID",
+       "healthCheckApiKey": "API_KEY"
      }
    }
    ```
